@@ -12,12 +12,26 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="pas_membership_id" class="col-md-4 col-form-label text-md-right">{{ __('No. ahli PAS') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="pas_membership_id" type="text" class="form-control @error('pas_membership_id') is-invalid @enderror" name="pas_membership_id" value="{{ old('pas_membership_id') }}" required autocomplete="pas_membership_id" autofocus>
+
+                                @error('pas_membership_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
